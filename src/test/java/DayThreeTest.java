@@ -55,11 +55,30 @@ public class DayThreeTest {
     }
 
     @Test
+    void testFirstExample8() throws IOException {
+        int result = DayThree.first("day_three_first_example8");
+
+        Assert.assertEquals(result, 100);
+    }
+
+    @Test
+    void testFirstExample9() throws IOException {
+        int result = DayThree.first("day_three_first_example9");
+
+        Assert.assertEquals(result, 94);
+    }
+
+    @Test
+    void testFirstExample10() throws IOException {
+        int result = DayThree.first("day_three_first_example10");
+
+        Assert.assertEquals(result, 94);
+    }
+
+    @Test
     void testFirstReal() throws IOException {
         int result = DayThree.first("day_three_first_real");
 
-        Assert.assertEquals(result, 553096);
-
-        //maior que 508447 e menor que 553096
+        Assert.assertEquals(result, 553079);
     }
 }

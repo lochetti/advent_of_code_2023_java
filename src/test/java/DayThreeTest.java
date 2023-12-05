@@ -81,4 +81,18 @@ public class DayThreeTest {
 
         Assert.assertEquals(result, 553079);
     }
+
+    @Test
+    void testSecondExample() throws IOException {
+        int result = DayThree.second("day_three_first_example");
+
+        Assert.assertEquals(result, 467835);
+    }
+
+    @Test
+    void testSecondReal() throws IOException {
+        int result = DayThree.second("day_three_first_real");
+
+        Assert.assertEquals(result, 84363105);
+    }
 }

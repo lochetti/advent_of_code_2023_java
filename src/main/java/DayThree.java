@@ -11,16 +11,12 @@ public class DayThree {
         reader.lines().forEach(s -> data.add(s.toCharArray()));
 
         int result = 0;
-        int previousResult = 0;
-
         for (int i = 1; i < data.size() - 1; i++) {
             for (int j = 0; j < data.get(i).length; j++) {
                 if (isSymbol(data.get(i)[j])) {
                     result += sumOfAdjacentNumbersToSymbol(data, i, j);
                 }
             }
-            System.out.println("Linha " + i + ", soma:" + (result - previousResult));
-            previousResult = result;
         }
 
         return result;

@@ -30,29 +30,37 @@ public class DayThree {
         int sum = 0;
 
         //up
-        if (isNumber(data.get(i - 1)[j - 1]) || isNumber(data.get(i - 1)[j]) || isNumber(data.get(i - 1)[j + 1])) {
-            if (!isNumber(data.get(i - 1)[j - 1])) {
-                sum += sumOfNumbersInSequence(data.get(i - 1), j, j + 3);
-            } else if (!isNumber(data.get(i - 1)[j + 1])) {
-                sum += sumOfNumbersInSequence(data.get(i - 1), j - 3, j);
-            } else if (!isNumber(data.get(i - 1)[j])) {
-                sum += sumOfNumbersInSequence(data.get(i - 1), j - 3, j + 3);
-            } else {
-                sum += sumOfNumbersInSequence(data.get(i - 1), j - 1, j + 1);
-            }
+        if (isNumber(data.get(i - 1)[j - 1]) && isNumber(data.get(i - 1)[j]) && isNumber(data.get(i - 1)[j + 1])) {
+            sum += sumOfNumbersInSequence(data.get(i - 1), j - 1, j + 1);
+        } else if (isNumber(data.get(i - 1)[j - 1]) && isNumber(data.get(i - 1)[j]) && !isNumber(data.get(i - 1)[j + 1])) {
+            sum += sumOfNumbersInSequence(data.get(i - 1), j - 2, j);
+        } else if (isNumber(data.get(i - 1)[j - 1]) && !isNumber(data.get(i - 1)[j]) && !isNumber(data.get(i - 1)[j + 1])) {
+            sum += sumOfNumbersInSequence(data.get(i - 1), j - 3, j - 1);
+        } else if (isNumber(data.get(i - 1)[j - 1]) && !isNumber(data.get(i - 1)[j]) && isNumber(data.get(i - 1)[j + 1])) {
+            sum += sumOfNumbersInSequence(data.get(i - 1), j - 3, j + 3);
+        } else if (!isNumber(data.get(i - 1)[j - 1]) && isNumber(data.get(i - 1)[j]) && isNumber(data.get(i - 1)[j + 1])) {
+            sum += sumOfNumbersInSequence(data.get(i - 1), j, j + 2);
+        } else if (!isNumber(data.get(i - 1)[j - 1]) && !isNumber(data.get(i - 1)[j]) && isNumber(data.get(i - 1)[j + 1])) {
+            sum += sumOfNumbersInSequence(data.get(i - 1), j + 1, j + 3);
+        } else if (!isNumber(data.get(i - 1)[j - 1]) && isNumber(data.get(i - 1)[j]) && !isNumber(data.get(i - 1)[j + 1])) {
+            sum += sumOfNumbersInSequence(data.get(i - 1), j, j);
         }
 
         //down
-        if (isNumber(data.get(i + 1)[j - 1]) || isNumber(data.get(i + 1)[j]) || isNumber(data.get(i + 1)[j + 1])) {
-            if (!isNumber(data.get(i + 1)[j - 1])) {
-                sum += sumOfNumbersInSequence(data.get(i + 1), j, j + 3);
-            } else if (!isNumber(data.get(i + 1)[j + 1])) {
-                sum += sumOfNumbersInSequence(data.get(i + 1), j - 3, j);
-            } else if (!isNumber(data.get(i + 1)[j])) {
-                sum += sumOfNumbersInSequence(data.get(i + 1), j - 3, j + 3);
-            } else {
-                sum += sumOfNumbersInSequence(data.get(i + 1), j - 1, j + 1);
-            }
+        if (isNumber(data.get(i + 1)[j - 1]) && isNumber(data.get(i + 1)[j]) && isNumber(data.get(i + 1)[j + 1])) {
+            sum += sumOfNumbersInSequence(data.get(i + 1), j - 1, j + 1);
+        } else if (isNumber(data.get(i + 1)[j - 1]) && isNumber(data.get(i + 1)[j]) && !isNumber(data.get(i + 1)[j + 1])) {
+            sum += sumOfNumbersInSequence(data.get(i + 1), j - 2, j);
+        } else if (isNumber(data.get(i + 1)[j - 1]) && !isNumber(data.get(i + 1)[j]) && !isNumber(data.get(i + 1)[j + 1])) {
+            sum += sumOfNumbersInSequence(data.get(i + 1), j - 3, j - 1);
+        } else if (isNumber(data.get(i + 1)[j - 1]) && !isNumber(data.get(i + 1)[j]) && isNumber(data.get(i + 1)[j + 1])) {
+            sum += sumOfNumbersInSequence(data.get(i + 1), j - 3, j + 3);
+        } else if (!isNumber(data.get(i + 1)[j - 1]) && isNumber(data.get(i + 1)[j]) && isNumber(data.get(i + 1)[j + 1])) {
+            sum += sumOfNumbersInSequence(data.get(i + 1), j, j + 2);
+        } else if (!isNumber(data.get(i + 1)[j - 1]) && !isNumber(data.get(i + 1)[j]) && isNumber(data.get(i + 1)[j + 1])) {
+            sum += sumOfNumbersInSequence(data.get(i + 1), j + 1, j + 3);
+        } else if (!isNumber(data.get(i + 1)[j - 1]) && isNumber(data.get(i + 1)[j]) && !isNumber(data.get(i + 1)[j + 1])) {
+            sum += sumOfNumbersInSequence(data.get(i + 1), j, j);
         }
 
         //left
